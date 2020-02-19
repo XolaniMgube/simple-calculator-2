@@ -38,17 +38,19 @@ class Calculator {
    
 }
 
-let instance = new Calculator();
-console.log(instance.add(1, 2));
-console.log(instance.add(1, 3));
-console.log(instance.add(1, 4));
-console.log(instance.add(1, 5));
-console.log(instance.add(1, 6));
+// let instance = new Calculator();
+// console.log(instance.add(1, 2));
+// console.log(instance.add(1, 3));
+// console.log(instance.add(1, 4));
+// console.log(instance.add(1, 5));
+// console.log(instance.add(1, 6));
 
-console.log(instance.setSlot(1), " should be 3")
-console.log(instance.getSlot(3), " should be 5")
+// console.log(instance.setSlot(1), " should be 3")
+// console.log(instance.getSlot(3), " should be 5")
 
-console.log(instance.getSlot(4))
+// console.log(instance.getSlot(4))
 
 // console.log(instance.multiply(instance.last(), 5))
 // console.log(instance.getSlot(1))
+
+module.exports = Calculator
