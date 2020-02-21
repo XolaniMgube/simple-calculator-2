@@ -3,6 +3,7 @@
 class Calculator {
     constructor() {
         this.storage = [];
+        this.memorySlot = [];
     }
 
     add() {
@@ -19,38 +20,21 @@ class Calculator {
         for (let j = 0; j < arguments.length; j++) {
             product *= arguments[j];
         }
-        this.storage.push(product)
+        this.storage.push(product);
         return product;
     }
 
-   last() {
-       return this.storage[this.storage.length - 1]
-   }
+    last() {
+        return this.storage[this.storage.length - 1];
+    }
 
-   setSlot(slotNumber) {
-        return this.storage[slotNumber - 1]
-        
-   }
+    setSlot(slotNumber) {
+        this.memorySlot[slotNumber - 1] = this.last();
+    }
 
-   getSlot(slotNumber) {
-        return this.setSlot(slotNumber)
-   }
-   
+    getSlot(slotNumber) {
+        return this.memorySlot[slotNumber - 1];
+    }
 }
 
-// let instance = new Calculator();
-// console.log(instance.add(1, 2));
-// console.log(instance.add(1, 3));
-// console.log(instance.add(1, 4));
-// console.log(instance.add(1, 5));
-// console.log(instance.add(1, 6));
-
-// console.log(instance.setSlot(1), " should be 3")
-// console.log(instance.getSlot(3), " should be 5")
-
-// console.log(instance.getSlot(4))
-
-// console.log(instance.multiply(instance.last(), 5))
-// console.log(instance.getSlot(1))
-
-module.exports = Calculator
+module.exports = Calculator;
