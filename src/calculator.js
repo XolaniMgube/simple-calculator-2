@@ -29,7 +29,7 @@ class Calculator {
     }
 
     setSlot(slotNumber) {
-        this.memorySlot[slotNumber - 1] = this.last();
+        this.memorySlot.push(this.storage[slotNumber - 1])
     }
 
     getSlot(slotNumber) {
