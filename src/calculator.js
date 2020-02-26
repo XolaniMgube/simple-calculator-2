@@ -9,7 +9,15 @@ class Calculator {
     add() {
         let sum = 0;
         for (let i = 0; i < arguments.length; i++) {
-            sum += arguments[i];
+            if (arguments[i] == "LAST") {
+                sum += this.last()
+            } else if (typeof arguments[i] == "string" && arguments[i].includes("SLOT_")) {
+                let slotPosition = arguments[i].match(/\d+/g)
+                sum += this.getSlot(slotPosition)
+            } else {
+                sum += arguments[i];
+            }
+            
         }
         this.storage.push(sum);
         return sum;
@@ -18,7 +26,14 @@ class Calculator {
     multiply() {
         let product = 1;
         for (let j = 0; j < arguments.length; j++) {
-            product *= arguments[j];
+            if (arguments[j] == "LAST") {
+                product *= this.last()
+            } else if (typeof arguments[j] == "string" && arguments[j].includes("SLOT_")) {
+                let slotPosition = arguments[j].match(/\d+/g)
+                product *= this.getSlot(slotPosition)
+            } else {
+                product *= arguments[j];
+            }
         }
         this.storage.push(product);
         return product;
@@ -37,4 +52,10 @@ class Calculator {
     }
 }
 
+let instance = new Calculator()
+instance.add(1,2,3,4)
+instance.setSlot(1)
+console.log(instance.multiply(2, "SLOT_1"))
+
 module.exports = Calculator;
+

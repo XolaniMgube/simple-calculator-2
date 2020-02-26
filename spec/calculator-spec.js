@@ -1,5 +1,9 @@
 "use strict"
 
+function idk() {
+    
+}
+
 describe("Testing the Calculator class", function () {
 
     beforeEach(function () {
@@ -23,10 +27,10 @@ describe("Testing the Calculator class", function () {
         expect(calculatorInstance.last()).toBe(2)
     })
 
-    it("allows the last function to be passed as an argument", function () {
+    it("allows the last function to be passed as a string argument", function () {
         calculatorInstance.add(1, 2)
         calculatorInstance.multiply(1, 2);
-        expect(calculatorInstance.multiply(calculatorInstance.last(), 5)).toBe(10)
+        expect(calculatorInstance.multiply("LAST", 5)).toBe(10)
     })
 
     it("returns an element on a specific index determined by the setSlot argument", function () {
@@ -45,6 +49,6 @@ describe("Testing the Calculator class", function () {
 
         expect(calculatorInstance.add(calculatorInstance.last(), 10)).toBe(310)
         expect(calculatorInstance.add(calculatorInstance.getSlot(1), 5)).toBe(8)
-        expect(calculatorInstance.multiply(calculatorInstance.getSlot(2), 2)).toBe(60)
+        expect(calculatorInstance.multiply("SLOT_2", 2)).toBe(60)
     })
 })
