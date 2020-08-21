@@ -16,8 +16,7 @@ class Calculator {
                 sum += this.getSlot(slotPosition)
             } else {
                 sum += arguments[i];
-            }
-            
+            }   
         }
         this.storage.push(sum);
         return sum;
@@ -51,11 +50,6 @@ class Calculator {
         return this.memorySlot[slotNumber - 1];
     }
 }
-
-let instance = new Calculator()
-instance.add(1,2,3,4)
-instance.setSlot(1)
-console.log(instance.multiply(2, "SLOT_1"))
 
 module.exports = Calculator;
 
